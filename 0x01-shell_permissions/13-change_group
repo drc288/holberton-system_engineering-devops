@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -R julien:holberton hello
+chown julien:holberton hello
