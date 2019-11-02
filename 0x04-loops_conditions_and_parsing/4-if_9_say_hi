@@ -6,9 +6,8 @@ while [ $i -lt "10" ]; do
 	if ((i == "8")); then
 		echo "Holberton School"
 		echo "hi"
-		i=$((i + 1))
 	 else
 		 echo "Holberton School"
-        	 i=$((i + 1))
 	 fi
+	 i=$((i + 1))
 done
