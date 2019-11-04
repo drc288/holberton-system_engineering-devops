@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# Using the command pgrep and print
+# Using the command pgrep and print the focess with the next
+# format, and using the next option
+# l - to print the proccess and the name of the user
 #   1 bash
 pgrep bash -l
