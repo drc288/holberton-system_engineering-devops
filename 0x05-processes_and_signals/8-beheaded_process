@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# other easy wey to kill a process
+# 	pkill -f [signal] [file]
+# -f the pattern
+pkill -f -SIGKILL "7-highlander"
