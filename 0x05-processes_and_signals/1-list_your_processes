@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that displays a list of currently running processes
+# using the command ps, and the optiones
+# a - to show the tty
+# u - display user-oriented format
+# x - to prit all proccess
+com='ps aux'
+eval $com
