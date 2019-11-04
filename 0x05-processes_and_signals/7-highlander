@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# The fist pass for my to undertand the signals
+# trap is the function the syntax is:
+# 	trap [message or function to execute] [the signal]
+trap "echo 'I am invincible!!!'" SIGTERM
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
