@@ -3,11 +3,9 @@
 # and print in position 9 "hi"
 i="0"
 while [ $i -lt "10" ]; do
+	echo "Holberton School"
 	if ((i == "8")); then
-		echo "Holberton School"
 		echo "hi"
-	 else
-		echo "Holberton School"
-	 fi
-	 i=$((i + 1))
+	fi
+	i=$((i + 1))
 done
