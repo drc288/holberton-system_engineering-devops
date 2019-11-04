@@ -5,5 +5,5 @@
 # u - display user-oriented format
 # x - to print all proccess
 # f - hierarchy
-com='ps auxf'
+com='ps -auxf'
 eval $com
