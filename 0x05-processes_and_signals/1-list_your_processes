@@ -3,6 +3,7 @@
 # using the command ps, and the optiones
 # a - to show the tty
 # u - display user-oriented format
-# x - to prit all proccess
-com='ps aux'
+# x - to print all proccess
+# f - hierarchy
+com='ps auxf'
 eval $com
