@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+# This script connect a machine with the direction
+# is 34.74.41.230
 ssh -i ~/.ssh/holberton ubuntu@34.74.41.230
