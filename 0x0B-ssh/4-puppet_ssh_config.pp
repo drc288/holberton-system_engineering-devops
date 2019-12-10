@@ -6,5 +6,5 @@ file_line {
 # Add the key
 file_line {
   path    => '/etc/ssh/ssh_config',
-  line    => '    IdentityFile ~/.ssh/holberton'
+  line    => '    IdentityFile ~/.ssh/holberton',
 }
