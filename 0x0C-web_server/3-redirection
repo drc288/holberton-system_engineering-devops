@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 # This scrypt update the server and install nginx
-
 REW="rewrite ^/redirect_me https://www.youtube.com/watch?v=_r2IzXVhYVo permanent;"
-
-
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo echo "Holberton School" > /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
 sed -i "19i $REW" /etc/nginx/sites-available/default
-
 sudo service nginx restart
