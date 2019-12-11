@@ -4,10 +4,10 @@
 REW="rewrite ^/redirect_me https://www.youtube.com/watch?v=_r2IzXVhYVo permanent;"
 
 
-#sudo apt-get update -y
-#sudo apt-get install nginx -y
-#sudo rm -r /var/www/html/*
-#sudo echo "Holberton School" > /var/www/html/index.html
-sed -i "/server_name localhost;/a $REW" /etc/nginx/sites-available/default
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo rm -r /var/www/html/*
+sudo echo "Holberton School" > /var/www/html/index.html
+sed -i "19i $REW" /etc/nginx/sites-available/default
 
 sudo service nginx restart
