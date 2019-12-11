@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # This scrypt update the server and install nginx
 
-REPLACE = "# Make site accessible from http://localhost/"
-REW = "rewrite ^/oldpage$ https://www.youtube.com/watch?v=_r2IzXVhYVo permanent;"
+REW="rewrite ^/redirect_me https://www.youtube.com/watch?v=_r2IzXVhYVo permanent;"
 
 
-sudo apt-get update -y
-sudo apt-get install nginx -y
-sudo rm -r /var/www/html/*
-sudo echo "Holberton School" > /var/www/html/index.html
-
-sed -i "/${REPLACE}/${REW}" /etc/nginx/sites-available/default
+#sudo apt-get update -y
+#sudo apt-get install nginx -y
+#sudo rm -r /var/www/html/*
+#sudo echo "Holberton School" > /var/www/html/index.html
+sed -i "/server_name localhost;/a $REW" /etc/nginx/sites-available/default
 
 sudo service nginx restart
