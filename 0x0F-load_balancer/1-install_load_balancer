@@ -2,16 +2,13 @@
 # This scrypt update the server and install haproxy                                                                                                                             
 sudo apt-get update -y
 sudo apt-get install haproxy=1.6.\* -y
-echo "
-frontend my_frontend
+echo "frontend my_frontend
         bind *:80
 	mode http
         stats uri /haproxy?stats
         default_backend my_backend" >> /etc/haproxy/haproxy.cfg 
-echo "
-backend my_backend
+echo "backend my_backend
         balance roundrobin
         server 885-web-01 34.73.4.188:80 check
         server 885-web-02 35.237.83.22:80 check" >> /etc/haproxy/haproxy.cfg
-
-sudo systemctl restart haproxy
+sudo service haproxy restart
