@@ -1,0 +1,8 @@
+#!/usr/bin/env bash                                                                                                                                                                             
+# This scrypt update the server and install nginx                                                                                                                                               
+INSERT="add_header X-Served-By $HOSTNAME;"                                                                                                                                                      
+sudo apt-get update -y                                                                                                                                                                          
+sudo apt-get install nginx -y                                                                                                                                                                   
+# append in line 18                                                                                                                                                         
+sudo sed -i "18i$INSERT" /etc/nginx/sites-available/default                                                                                                                                          
+sudo service nginx restart
