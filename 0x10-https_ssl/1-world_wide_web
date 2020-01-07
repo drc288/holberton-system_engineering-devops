@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script display the records for the domain
+# ##############################################
+# #               DOMAIN DISPLAY               #
+# ##############################################
+#
+# verify if the user send 2 parameters
+if [ "$#" == 2 ]; then
+	printf "The subdomain %s " "$2"
+	dig "$2.$1" | grep -A 1 'ANSWER SECTION:' | grep "$2" | awk '{print "is a " $4 " record and points to " $5}' 
+fi
+# verify if the user send 1 parameter
+if [ "$#" == 1 ]; then
+	N_ARRAY=("www" "lb-01" "web-01" "web-02")
+	for sub_dom in "${N_ARRAY[@]}"; do
+		printf "The subdomain %s " "$sub_dom"
+		dig "$sub_dom.$1" | grep -A 1 'ANSWER SECTION:' | grep "$sub_dom" | awk '{print "is a " $4 " record and points to " $5}'
+	done
+fi
