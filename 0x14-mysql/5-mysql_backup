@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script update a backup of database
+A=`date +"%d-%m-%Y"`
+if [ "$#" == 1 ]; then
+  mysqldump -u root -p"$1" --opt tyrell_corp > backup.sql
+  tar -czvf "${A}.tar.gz" backup.sql
+fi
