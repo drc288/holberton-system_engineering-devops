@@ -18,9 +18,9 @@ def top_ten(subreddit):
     to_search = url + subreddit + "/hot.json?limit=10"
     req = requests.get(to_search, headers=header)
     if req.status_code == 404:
-        return None
-
-    t_ch = req.json().get("data")
-    data_tch = t_ch.get("children")
-    for ps_list in data_tch:
-        print(ps_list.get("data")["title"])
+        print("None")
+    else:
+        t_ch = req.json().get("data")
+        data_tch = t_ch.get("children")
+        for ps_list in data_tch:
+            print(ps_list.get("data")["title"])
