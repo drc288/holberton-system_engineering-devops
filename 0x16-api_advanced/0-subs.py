@@ -3,8 +3,8 @@
 This file send a request  to https://www.reddit.com and get
 the subredit
 """
-import praw
 import requests
+
 
 def number_of_subscribers(subreddit):
     """Get all subscribers for a subreddit
@@ -18,8 +18,8 @@ def number_of_subscribers(subreddit):
     to_search = url + subreddit + "/about.json"
 
     req = requests.get(to_search, headers=header)
-    if req.status_code != 200:
+    if req.status_code == 404:
         return 0
-    else:
-        dataJSON = req.json().get("data")
-        return dataJSON.get("subscribers")
+    
+    dataJSON = req.json().get("data")
+    return dataJSON.get("subscribers")
