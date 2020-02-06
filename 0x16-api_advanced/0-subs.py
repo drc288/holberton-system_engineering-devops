@@ -20,6 +20,5 @@ def number_of_subscribers(subreddit):
     req = requests.get(to_search, headers=header)
     if req.status_code == 404:
         return 0
-    
     dataJSON = req.json().get("data")
     return dataJSON.get("subscribers")
